@@ -192,24 +192,41 @@ a { color: inherit; }
 .grey { background: var(--grey-9); color: var(--white); }
 .dark .section-head p, .grey .section-head p { color: rgba(255,255,255,0.75); }
 
-/* Journey */
-.journey { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-.track svg { width: 100%; height: auto; overflow: visible; }
-.stop-num { font-family: var(--body); font-size: 11px; font-weight: 700; }
-.stops { list-style: none; margin: 0; padding: 0; }
-.stops li { display: grid; grid-template-columns: 44px 1fr auto; gap: 8px; align-items: baseline; padding: 15px 0; border-bottom: 1px solid var(--grey-2); }
-.stops li:first-child { border-top: 1px solid var(--grey-2); }
-.stops .n { font-size: 12px; font-weight: 700; color: var(--grey-5); }
-.stops .t { font-size: 17px; font-weight: 500; }
-.stops .when { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--grey-5); }
-.stops li.done .n, .stops li.done .when { color: var(--rose); }
-.stops li.goal .t { font-stretch: 125%; font-weight: 700; text-transform: uppercase; }
-.stops li.goal .when { color: var(--black); }
-
 .ledger { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
 .ledger h3 { font-size: 24px; margin-bottom: 24px; }
 .ledger ul { list-style: none; margin: 0; padding: 0; }
 .ledger li { padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.14); color: rgba(255,255,255,0.82); }
+
+/* Journey */
+.intro { max-width: 980px; margin: 0 auto; padding: 120px 40px 72px; text-align: center; }
+.intro .display { font-size: clamp(28px, 3.8vw, 54px); }
+.intro p { max-width: 640px; margin: 24px auto 0; font-size: 17px; color: #444; }
+
+.lap { max-width: 1200px; margin: 0 auto; padding: 0 40px 120px; }
+.lap-line { position: relative; height: 2px; background: var(--grey-2); margin: 40px 0 0; }
+.lap-line .done { position: absolute; left: 0; top: 0; bottom: 0; background: var(--rose); }
+.lap-dots { position: relative; display: flex; justify-content: space-between; margin-top: -8px; }
+.lap-dots span { width: 14px; height: 14px; border-radius: 50%; background: var(--white); border: 2px solid var(--black); }
+.lap-dots span.on { background: var(--rose); border-color: var(--rose); }
+.lap-dots span.flag { width: 20px; height: 20px; margin-top: -3px; background: var(--black); }
+.lap-years { display: flex; justify-content: space-between; margin-top: 18px; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; color: var(--grey-5); }
+.lap-years b { color: var(--black); }
+
+.chapter { display: grid; grid-template-columns: 1fr 1fr; min-height: 640px; }
+.chapter + .chapter { border-top: 1px solid var(--grey-2); }
+.chapter .pic { background: var(--black) center / cover no-repeat; min-height: 420px; }
+.chapter .txt { padding: 96px 80px; display: flex; flex-direction: column; justify-content: center; }
+.chapter.flip .pic { order: 2; }
+.chapter.final { background: var(--black); color: var(--white); border-top: 0; }
+.year { font-family: var(--head); font-stretch: 125%; font-weight: 700; font-size: clamp(56px, 7vw, 104px); line-height: 0.9; letter-spacing: -0.01em; margin: 0 0 18px; }
+.chapter .display { font-size: clamp(22px, 2.2vw, 32px); margin-bottom: 28px; }
+.miles { list-style: none; margin: 0; padding: 0; }
+.miles li { display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-top: 1px solid var(--grey-2); font-size: 17px; font-weight: 500; }
+.final .miles li { border-top-color: rgba(255,255,255,0.18); }
+.miles li span { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--grey-5); white-space: nowrap; }
+.miles li.ok span { color: var(--rose); }
+.miles li.goal { font-stretch: 125%; font-weight: 700; text-transform: uppercase; font-size: 20px; }
+.miles li.goal span { color: var(--rose); }
 
 /* Sponsorship */
 .tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--grey-2); }
@@ -296,7 +313,11 @@ a { color: inherit; }
 .send:hover { background: var(--black); }
 
 @media (max-width: 900px) {
-  .story, .journey, .ledger, .note, .contact { grid-template-columns: 1fr; gap: 48px; }
+  .story, .ledger, .note, .contact, .chapter { grid-template-columns: 1fr; gap: 48px; }
+  .chapter { gap: 0; }
+  .chapter.flip .pic { order: 0; }
+  .chapter .txt { padding: 56px 24px 72px; }
+  .lap-years span:not(:first-child):not(:last-child) { display: none; }
   .story { padding: 88px 24px; }
   .tiers, .sponsors { grid-template-columns: 1fr; }
   .shop { grid-template-columns: repeat(2, 1fr); gap: 40px 16px; }
