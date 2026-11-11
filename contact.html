@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | 545 Motorsport</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <nav class="nav">
+    <a href="index.html" class="nav-logo" aria-label="545 Motorsport home"><img src="mark.svg" alt="545"></a>
+    <a href="journey.html">Our Journey</a>
+    <a href="prints.html">Prints</a>
+    <a href="sponsorship.html">Sponsorship</a>
+  </nav>
+</header>
+<main>
+  <h1 class="page-title">Contact</h1>
+  <p class="page-sub">Ask for a sponsor pack, or send a general enquiry.</p>
+
+  <div class="contact">
+    <button class="pack" id="pack" type="button">Request<br>sponsor<br>pack</button>
+
+    <form class="enquiry" id="enquiry">
+      <h2 id="form-title">General enquiry</h2>
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required autocomplete="email">
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" required autocomplete="name">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required></textarea>
+      <button class="btn pink" type="submit">Send</button>
+    </form>
+  </div>
+
+  <script>
+    // Where enquiries go. Change this one line to the real address.
+    var CONTACT_EMAIL = 'hello@545motorsport.example';
+
+    var subject = 'General enquiry';
+    var pack = document.getElementById('pack');
+    pack.addEventListener('click', function () {
+      var on = pack.classList.toggle('on');
+      subject = on ? 'Sponsor pack request' : 'General enquiry';
+      document.getElementById('form-title').textContent = on ? 'Sponsor pack request' : 'General enquiry';
+      var msg = document.getElementById('message');
+      if (on && !msg.value) msg.value = 'Please send me your sponsor pack.';
+      document.getElementById('email').focus();
+    });
+
+    document.getElementById('enquiry').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var f = e.target;
+      var body = 'Name: ' + f.name.value + '\nEmail: ' + f.email.value + '\n\n' + f.message.value;
+      window.location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    });
+  </script>
+</main>
+</body>
+</html>

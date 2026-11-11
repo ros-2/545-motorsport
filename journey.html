@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Our Journey | 545 Motorsport</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <nav class="nav">
+    <a href="index.html" class="nav-logo" aria-label="545 Motorsport home"><img src="mark.svg" alt="545"></a>
+    <a href="journey.html" aria-current="page">Our Journey</a>
+    <a href="prints.html">Prints</a>
+    <a href="sponsorship.html">Sponsorship</a>
+  </nav>
+</header>
+<main>
+  <h1 class="page-title">The Future</h1>
+  <p class="page-sub">The road so far, and the road ahead.</p>
+
+  <div class="track-wrap">
+    <svg id="track" viewBox="0 0 600 620" aria-label="Journey track with eight stops">
+      <path id="track-edge" d="M110 60 H370 C500 60 500 175 370 195 L190 245 C40 285 60 360 210 350 H330 C470 350 520 450 470 520 C440 565 390 575 330 575 H110"
+            fill="none" stroke="#ff1fb4" stroke-opacity="0.18" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+      <path id="track-line" d="M110 60 H370 C500 60 500 175 370 195 L190 245 C40 285 60 360 210 350 H330 C470 350 520 450 470 520 C440 565 390 575 330 575 H110"
+            fill="none" stroke="#ff1fb4" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <g id="stops"></g>
+    </svg>
+  </div>
+
+  <section class="box two-col">
+    <div>
+      <h2>What we've achieved</h2>
+      <p class="placeholder">Results, podiums, championships and firsts go here.</p>
+    </div>
+    <div>
+      <h2>Our aims</h2>
+      <p class="placeholder">Next season's goals and where I want to be in five years go here.</p>
+    </div>
+  </section>
+
+  <script>
+    // Eight evenly spaced stops along the track, as in the sketch.
+    (function () {
+      var path = document.getElementById('track-line');
+      var g = document.getElementById('stops');
+      var ns = 'http://www.w3.org/2000/svg';
+      var len = path.getTotalLength();
+      var count = 8;
+      for (var i = 0; i < count; i++) {
+        var p = path.getPointAtLength(len * i / (count - 1));
+        var c = document.createElementNS(ns, 'circle');
+        c.setAttribute('cx', p.x); c.setAttribute('cy', p.y); c.setAttribute('r', 17);
+        c.setAttribute('fill', '#1a0f6b'); c.setAttribute('stroke', '#fff'); c.setAttribute('stroke-width', 4);
+        var t = document.createElementNS(ns, 'text');
+        t.setAttribute('x', p.x); t.setAttribute('y', p.y + 4.5);
+        t.setAttribute('text-anchor', 'middle'); t.setAttribute('class', 'stop-num');
+        t.textContent = i + 1;
+        var title = document.createElementNS(ns, 'title');
+        title.textContent = 'Stop ' + (i + 1);
+        c.appendChild(title);
+        g.appendChild(c); g.appendChild(t);
+      }
+    })();
+  </script>
+</main>
+</body>
+</html>
