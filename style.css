@@ -181,6 +181,10 @@ a { color: inherit; }
 .tile::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,0.72)); }
 .tile .inner { position: relative; padding: 0 24px 64px; }
 .tile .display { font-size: clamp(26px, 3.2vw, 46px); }
+a.tile { text-decoration: none; }
+.tile .go { margin-top: 26px; }
+.tile:hover .go i { background: var(--white); color: var(--black); border-color: var(--white); }
+.tile { background-size: cover; transition: background-size 0.6s; }
 
 
 /* Generic content */
