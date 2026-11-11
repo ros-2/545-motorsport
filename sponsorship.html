@@ -8,7 +8,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300;400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,61 +22,54 @@
   </nav>
 </header>
 <main>
-  <section class="page-head dark">
-    <div class="wrap">
-      <p class="eyebrow">Sponsorship</p>
-      <h2 class="h2">Partner with 545</h2>
-      <p>Racing is paid for by the people who believe in it. Partners get their name on a team that is going places, and a seat at the table for every step of the way to Le Mans.</p>
+  <section class="hero short" style="background-image:url('img/pit-lane.jpg')">
+    <div class="hero-inner">
+      <p class="kicker">Sponsorship</p>
+      <h1 class="display">Partner with 545</h1>
+      <p class="lede">Racing is paid for by the people who believe in it. Partners get their name on a team that is going places, and a seat at the table for every step to Le Mans.</p>
     </div>
   </section>
 
-  <section class="block">
-    <div class="wrap">
-      <div class="tiers">
-        <div class="tier">
-          <h3>Supporter</h3>
-          <p class="price">From £250 a season</p>
-          <ul>
-            <li>Name on the car and on this site</li>
-            <li>Season updates from the team</li>
-            <li>Signed 545 print</li>
-          </ul>
-        </div>
-        <div class="tier feature">
-          <h3>Partner</h3>
-          <p class="price">From £2,500 a season</p>
-          <ul>
-            <li>Logo on the car, race suit and team kit</li>
-            <li>Featured on social channels through the season</li>
-            <li>Paddock hospitality at a race of your choice</li>
-            <li>Content you can use in your own marketing</li>
-          </ul>
-        </div>
-        <div class="tier">
-          <h3>Title partner</h3>
-          <p class="price">By arrangement</p>
-          <ul>
-            <li>Your name alongside 545 on the car</li>
-            <li>Livery input and launch event</li>
-            <li>Track days and hospitality for your team</li>
-          </ul>
-        </div>
+  <section class="section">
+    <div class="tiers">
+      <div class="tier">
+        <h3 class="display">Supporter</h3>
+        <p class="price">From £250 a season</p>
+        <ul><li>Name on the car and on this site</li><li>Season updates from the team</li><li>Signed 545 print</li></ul>
       </div>
-      <p style="margin-top:28px;color:var(--muted)">Full details are in the sponsor pack. <a href="contact.html" style="color:var(--rose)">Request it here</a>.</p>
+      <div class="tier feature">
+        <h3 class="display">Partner</h3>
+        <p class="price">From £2,500 a season</p>
+        <ul><li>Logo on the car, race suit and team kit</li><li>Featured on social channels through the season</li><li>Paddock hospitality at a race of your choice</li><li>Content to use in your own marketing</li></ul>
+      </div>
+      <div class="tier">
+        <h3 class="display">Title partner</h3>
+        <p class="price">By arrangement</p>
+        <ul><li>Your name alongside 545 on the car</li><li>Livery input and launch event</li><li>Track days and hospitality for your team</li></ul>
+      </div>
     </div>
+    <p class="pack-line">Full details are in the sponsor pack. <a href="contact.html">Request it here</a>.</p>
   </section>
 
-  <section class="block" style="padding-top:0">
-    <div class="wrap">
-      <p class="eyebrow">Founding partners</p>
-      <h2 class="h2">Sponsors we have</h2>
-      <div class="sponsors">
-        <a class="sponsor" href="https://www.rotech.co.uk/" target="_blank" rel="noopener"><img src="sponsors/rotech.png" alt="Rotech"></a>
-        <a class="sponsor" href="https://fireworkchimneysweep.co.uk/" target="_blank" rel="noopener"><img src="sponsors/firework.png" alt="Firework Chimney Sweep"></a>
-        <a class="sponsor" href="https://quickler.co/" target="_blank" rel="noopener"><img src="sponsors/quickler.svg" alt="Quickler"></a>
-      </div>
+  <section class="section" style="padding-top:0">
+    <div class="section-head">
+      <p class="kicker">Founding partners</p>
+      <h2 class="display">Sponsors we have</h2>
+    </div>
+    <div class="sponsors">
+      <a class="sponsor" href="https://www.rotech.co.uk/" target="_blank" rel="noopener"><img src="sponsors/rotech.png" alt="Rotech"></a>
+      <a class="sponsor" href="https://fireworkchimneysweep.co.uk/" target="_blank" rel="noopener"><img src="sponsors/firework.png" alt="Firework Chimney Sweep"></a>
+      <a class="sponsor" href="https://quickler.co/" target="_blank" rel="noopener"><img src="sponsors/quickler.svg" alt="Quickler"></a>
     </div>
   </section>
 </main>
+<script>
+  (function () {
+    var top = document.querySelector(".top");
+    var solid = !document.querySelector(".hero");
+    function set() { top.classList.toggle("solid", solid || window.scrollY > 40); }
+    set(); window.addEventListener("scroll", set, { passive: true });
+  })();
+</script>
 </body>
 </html>

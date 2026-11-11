@@ -8,7 +8,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300;400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,64 +22,51 @@
   </nav>
 </header>
 <main>
-  <section class="hero dark">
-    <svg class="hero-bg" viewBox="0 0 400 400" aria-hidden="true">
-      <circle cx="200" cy="200" r="160" fill="none" stroke="#f4f1ea" stroke-width="2"/>
-      <circle cx="200" cy="200" r="136" fill="none" stroke="#f4f1ea" stroke-width="10" stroke-dasharray="14 4"/>
-      <circle cx="200" cy="200" r="186" fill="none" stroke="#f4f1ea" stroke-width="1"/>
-    </svg>
-    <div class="wrap hero-inner">
+  <section class="hero" style="background-image:url('img/hero.jpg')">
+    <div class="hero-inner">
       <img class="hero-logo" src="mark-light.svg" alt="545">
-      <div class="hero-word">MOTORSPORT</div>
-      <h1>Win Le Mans. <em>By&nbsp;2035.</em></h1>
-      <p class="lede">An engineer-led endurance racing team, built from the ground up with one target and a ten-year plan to reach it.</p>
+      <p class="kicker">545 Motorsport</p>
+      <h1 class="display">Win Le Mans by 2035</h1>
     </div>
   </section>
 
-  <section class="block dark" id="logo-options" style="padding:96px 0">
-    <div class="wrap" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:48px;align-items:end">
-      <div><p class="eyebrow">Logo A · Karussell</p><img src="mark-light.svg" alt="Logo A" style="width:100%;max-width:460px"></div>
-      <div><p class="eyebrow">Logo B · Left-hander into the stem</p><img src="mark-b-light.svg" alt="Logo B" style="width:100%;max-width:460px"></div>
-      <div style="background:#f4f1ea;padding:32px"><img src="mark.svg" alt="Logo A on light" style="width:100%;max-width:460px"></div>
-      <div style="background:#f4f1ea;padding:32px"><img src="mark-b.svg" alt="Logo B on light" style="width:100%;max-width:460px"></div>
+  <section class="story light">
+    <div>
+      <p class="kicker">The team</p>
+      <h2 class="display">Built to win the biggest race in the world</h2>
+      <p>545 Motorsport was founded by Susanna, a trained engineer with a lifelong love of racing and the patience to do it properly.</p>
+      <p>The plan is clear: climb from club racing to international GT endurance racing, take our place on the grid at La Sarthe, and win the 24 Hours of Le Mans by 2035.</p>
+      <p>Every decision is measured, tested and improved. No shortcuts and no noise, just steady progress towards one chequered flag.</p>
     </div>
+    <img src="img/cockpit.jpg" alt="Inside a racing car cockpit">
   </section>
 
-  <section class="block">
-    <div class="wrap">
-      <div class="split">
-        <div>
-          <p class="eyebrow">The team</p>
-          <h2 class="h2">Built by an engineer. Driven by everyone who joins&nbsp;in.</h2>
-        </div>
-        <div class="prose">
-          <p class="big">545 Motorsport was founded by Susanna, an engineer with a lifelong love of racing and the patience to do it properly.</p>
-          <p>The plan is simple to say and hard to do: climb the ladder from club racing to international GT endurance racing, line up on the grid at La Sarthe, and take the chequered flag at the 24 Hours of Le Mans by 2035.</p>
-          <p>Every part of the team runs the way an engineer would run it. Measure, learn, improve, repeat. No shortcuts, no noise, just steady progress towards the biggest race in the world.</p>
-        </div>
-      </div>
-
-      <div class="stats">
-        <div class="stat"><b>2035</b><span>Target year</span></div>
-        <div class="stat"><b>24</b><span>Hours at La Sarthe</span></div>
-        <div class="stat"><b>3</b><span>Founding partners</span></div>
-        <div class="stat"><b>1</b><span>Goal</span></div>
+  <section class="banner" style="background-image:url('img/adventure.jpg')">
+    <div class="inner">
+      <p class="kicker">Join us</p>
+      <h2 class="display">Be a part of the adventure</h2>
+      <p>This was never one person's journey. It is ours, and it is yours. Back the car, hang a print on your wall or wear the colours: all of it goes into the racing.</p>
+      <div class="go-row">
+        <a class="go" href="sponsorship.html">Sponsor <i></i></a>
+        <a class="go" href="prints.html">Buy print <i></i></a>
       </div>
     </div>
   </section>
 
-  <section class="adventure dark">
-    <div class="wrap">
-      <p class="eyebrow">Join us</p>
-      <h2 class="h2">Be a part of the adventure</h2>
-      <p>This was never one person's journey. It is ours, and it is yours. Back the car, hang a print on your wall or wear the colours: every part of it goes into the racing.</p>
-      <div class="actions">
-        <a class="btn solid" href="sponsorship.html">Sponsor</a>
-        <a class="btn" href="prints.html">Buy print</a>
-      </div>
-    </div>
-    <div class="adventure-line"></div>
+  <section class="tiles">
+    <div class="tile" style="background-image:url('img/corner.jpg')"><div class="inner"><p class="kicker">Our Journey</p><h2 class="display">The road to 2035</h2></div></div>
+    <div class="tile" style="background-image:url('img/headlight.jpg')"><div class="inner"><p class="kicker">Prints</p><h2 class="display">Art for the racing</h2></div></div>
+    <div class="tile" style="background-image:url('img/paddock-style.jpg')"><div class="inner"><p class="kicker">Clothing</p><h2 class="display">The Paddock Edit</h2></div></div>
+    <div class="tile" style="background-image:url('img/gt-cars.jpg')"><div class="inner"><p class="kicker">Sponsorship</p><h2 class="display">Partner with 545</h2></div></div>
   </section>
 </main>
+<script>
+  (function () {
+    var top = document.querySelector(".top");
+    var solid = !document.querySelector(".hero");
+    function set() { top.classList.toggle("solid", solid || window.scrollY > 40); }
+    set(); window.addEventListener("scroll", set, { passive: true });
+  })();
+</script>
 </body>
 </html>

@@ -8,7 +8,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300;400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,27 +22,26 @@
   </nav>
 </header>
 <main>
-  <section class="page-head dark">
-    <div class="wrap">
-      <p class="eyebrow">Our journey</p>
-      <h2 class="h2">The road to 2035</h2>
-      <p>Eleven milestones between a sketch on a page and the top step at Le Mans. Two are done. Here is the rest of the lap.</p>
+  <section class="hero short" style="background-image:url('img/corner.jpg')">
+    <div class="hero-inner">
+      <p class="kicker">Our Journey</p>
+      <h1 class="display">The road to 2035</h1>
+      <p class="lede">Eleven milestones between a sketch on a page and the top step at Le Mans. Two are done.</p>
     </div>
   </section>
 
-  <section class="block">
-    <div class="wrap journey">
+  <section class="section">
+    <div class="journey">
       <div class="track">
         <svg id="track" viewBox="0 0 600 640" aria-label="The road to 2035 drawn as a track with eleven milestones">
-          <path id="track-edge" d="M110 60 H370 C500 60 500 175 370 195 L190 245 C40 285 60 360 210 350 H330 C470 350 520 450 470 520 C440 565 390 575 330 575 H110"
-                fill="none" stroke="#d9d4c7" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M110 60 H370 C500 60 500 175 370 195 L190 245 C40 285 60 360 210 350 H330 C470 350 520 450 470 520 C440 565 390 575 330 575 H110"
+                fill="none" stroke="#e6e6e6" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
           <path id="track-line" d="M110 60 H370 C500 60 500 175 370 195 L190 245 C40 285 60 360 210 350 H330 C470 350 520 450 470 520 C440 565 390 575 330 575 H110"
-                fill="none" stroke="#15104a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path id="track-done" fill="none" stroke="#c2427f" stroke-width="4" stroke-linecap="round"/>
+                fill="none" stroke="#0b0b0d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path id="track-done" fill="none" stroke="#d0468f" stroke-width="4" stroke-linecap="round"/>
           <g id="stops"></g>
         </svg>
       </div>
-
       <ol class="stops">
         <li class="done"><span class="n">01</span><span class="t">Website and social channels live</span><span class="when">Done</span></li>
         <li class="done"><span class="n">02</span><span class="t">Three founding partners on board</span><span class="when">Done</span></li>
@@ -59,10 +58,10 @@
     </div>
   </section>
 
-  <section class="block dark">
-    <div class="wrap ledger">
+  <section class="dark">
+    <div class="section ledger">
       <div>
-        <p class="eyebrow">What we've achieved</p>
+        <h3 class="display">What we've achieved</h3>
         <ul>
           <li>545 Motorsport founded, with a ten-year plan to Le Mans</li>
           <li>Identity, website and social channels launched</li>
@@ -71,7 +70,7 @@
         </ul>
       </div>
       <div>
-        <p class="eyebrow">Our aims</p>
+        <h3 class="display">Our aims</h3>
         <ul>
           <li>Build a following that feels part of the team, not just watching it</li>
           <li>Put the first 545 car on track and win in it</li>
@@ -97,18 +96,26 @@
         var isDone = i < done, isGoal = i === count - 1;
         var c = document.createElementNS(ns, 'circle');
         c.setAttribute('cx', p.x); c.setAttribute('cy', p.y); c.setAttribute('r', isGoal ? 19 : 14);
-        c.setAttribute('fill', isDone || isGoal ? (isGoal ? '#15104a' : '#c2427f') : '#f4f1ea');
-        c.setAttribute('stroke', isDone ? '#c2427f' : '#15104a');
+        c.setAttribute('fill', isGoal ? '#0b0b0d' : (isDone ? '#d0468f' : '#ffffff'));
+        c.setAttribute('stroke', isDone ? '#d0468f' : '#0b0b0d');
         c.setAttribute('stroke-width', 1.5);
         var t = document.createElementNS(ns, 'text');
         t.setAttribute('x', p.x); t.setAttribute('y', p.y + 4);
         t.setAttribute('text-anchor', 'middle'); t.setAttribute('class', 'stop-num');
-        t.setAttribute('fill', isDone || isGoal ? '#fff' : '#15104a');
+        t.setAttribute('fill', isDone || isGoal ? '#fff' : '#0b0b0d');
         t.textContent = i + 1;
         g.appendChild(c); g.appendChild(t);
       }
     })();
   </script>
 </main>
+<script>
+  (function () {
+    var top = document.querySelector(".top");
+    var solid = !document.querySelector(".hero");
+    function set() { top.classList.toggle("solid", solid || window.scrollY > 40); }
+    set(); window.addEventListener("scroll", set, { passive: true });
+  })();
+</script>
 </body>
 </html>
