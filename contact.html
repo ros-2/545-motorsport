@@ -3,40 +3,49 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="545 Motorsport: an engineer-led endurance racing team with one goal, to win the 24 Hours of Le Mans by 2035.">
   <title>Contact | 545 Motorsport</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300;400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="top">
   <nav class="nav">
-    <a href="index.html" class="nav-logo" aria-label="545 Motorsport home"><img src="mark.svg" alt="545"></a>
+    <a href="index.html" class="nav-logo" aria-label="545 Motorsport home"><img src="mark-light.svg" alt="545"></a>
     <a href="journey.html">Our Journey</a>
     <a href="prints.html">Prints</a>
+    <a href="clothing.html">Clothing</a>
     <a href="sponsorship.html">Sponsorship</a>
   </nav>
 </header>
 <main>
-  <h1 class="page-title">Contact</h1>
-  <p class="page-sub">Ask for a sponsor pack, or send a general enquiry.</p>
+  <section class="page-head dark">
+    <div class="wrap">
+      <p class="eyebrow">Contact</p>
+      <h2 class="h2">Talk to the team</h2>
+      <p>Ask for the sponsor pack, or send a general enquiry. We reply to every message.</p>
+    </div>
+  </section>
 
-  <div class="contact">
-    <button class="pack" id="pack" type="button">Request<br>sponsor<br>pack</button>
+  <section class="block">
+    <div class="wrap contact">
+      <button class="pack" id="pack" type="button">Request the sponsor&nbsp;pack<small>Packages, audience and what partners get back, in one document.</small></button>
 
-    <form class="enquiry" id="enquiry">
-      <h2 id="form-title">General enquiry</h2>
-      <label for="email">Email</label>
-      <input id="email" name="email" type="email" required autocomplete="email">
-      <label for="name">Name</label>
-      <input id="name" name="name" type="text" required autocomplete="name">
-      <label for="message">Message</label>
-      <textarea id="message" name="message" required></textarea>
-      <button class="btn pink" type="submit">Send</button>
-    </form>
-  </div>
+      <form class="enquiry" id="enquiry">
+        <h3 id="form-title">General enquiry</h3>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required autocomplete="email">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required autocomplete="name">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+        <button class="btn" type="submit">Send</button>
+      </form>
+    </div>
+  </section>
 
   <script>
     // Where enquiries go. Change this one line to the real address.
@@ -47,9 +56,9 @@
     pack.addEventListener('click', function () {
       var on = pack.classList.toggle('on');
       subject = on ? 'Sponsor pack request' : 'General enquiry';
-      document.getElementById('form-title').textContent = on ? 'Sponsor pack request' : 'General enquiry';
+      document.getElementById('form-title').textContent = subject;
       var msg = document.getElementById('message');
-      if (on && !msg.value) msg.value = 'Please send me your sponsor pack.';
+      if (on && !msg.value) msg.value = 'Please send me the 545 Motorsport sponsor pack.';
       document.getElementById('email').focus();
     });
 

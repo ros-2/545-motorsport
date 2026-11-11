@@ -3,44 +3,74 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="545 Motorsport: an engineer-led endurance racing team with one goal, to win the 24 Hours of Le Mans by 2035.">
   <title>545 Motorsport</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300;400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="top">
   <nav class="nav">
-    <a href="index.html" class="nav-logo" aria-label="545 Motorsport home"><img src="mark.svg" alt="545"></a>
+    <a href="index.html" class="nav-logo" aria-label="545 Motorsport home"><img src="mark-light.svg" alt="545"></a>
     <a href="journey.html">Our Journey</a>
     <a href="prints.html">Prints</a>
+    <a href="clothing.html">Clothing</a>
     <a href="sponsorship.html">Sponsorship</a>
   </nav>
 </header>
 <main>
-  <section class="hero">
-    <div class="rule"></div>
-    <div class="hero-logo">
-      <img src="mark.svg" alt="545">
-      <div class="wordmark">MOTORSPORT</div>
+  <section class="hero dark">
+    <svg class="hero-bg" viewBox="0 0 400 400" aria-hidden="true">
+      <circle cx="200" cy="200" r="160" fill="none" stroke="#f4f1ea" stroke-width="2"/>
+      <circle cx="200" cy="200" r="136" fill="none" stroke="#f4f1ea" stroke-width="10" stroke-dasharray="14 4"/>
+      <circle cx="200" cy="200" r="186" fill="none" stroke="#f4f1ea" stroke-width="1"/>
+    </svg>
+    <div class="wrap hero-inner">
+      <img class="hero-logo" src="mark-light.svg" alt="545">
+      <div class="hero-word">MOTORSPORT</div>
+      <h1>Win Le Mans. <em>By&nbsp;2035.</em></h1>
+      <p class="lede">An engineer-led endurance racing team, built from the ground up with one target and a ten-year plan to reach it.</p>
     </div>
-    <div class="rule"></div>
   </section>
 
-  <section class="box narrow">
-    <p class="placeholder">Blurb goes here: a few lines about who I am, how I got into racing, what I drive and where I race.</p>
+  <section class="block">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <p class="eyebrow">The team</p>
+          <h2 class="h2">Built by an engineer. Driven by everyone who joins&nbsp;in.</h2>
+        </div>
+        <div class="prose">
+          <p class="big">545 Motorsport was founded by Susanna, an engineer with a lifelong love of racing and the patience to do it properly.</p>
+          <p>The plan is simple to say and hard to do: climb the ladder from club racing to international GT endurance racing, line up on the grid at La Sarthe, and take the chequered flag at the 24 Hours of Le Mans by 2035.</p>
+          <p>Every part of the team runs the way an engineer would run it. Measure, learn, improve, repeat. No shortcuts, no noise, just steady progress towards the biggest race in the world.</p>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><b>2035</b><span>Target year</span></div>
+        <div class="stat"><b>24</b><span>Hours at La Sarthe</span></div>
+        <div class="stat"><b>3</b><span>Founding partners</span></div>
+        <div class="stat"><b>1</b><span>Goal</span></div>
+      </div>
+    </div>
   </section>
 
-  <section class="callout">
-    <h2>Be a part of<br>my journey</h2>
+  <section class="adventure dark">
+    <div class="wrap">
+      <p class="eyebrow">Join us</p>
+      <h2 class="h2">Be a part of the adventure</h2>
+      <p>This was never one person's journey. It is ours, and it is yours. Back the car, hang a print on your wall or wear the colours: every part of it goes into the racing.</p>
+      <div class="actions">
+        <a class="btn solid" href="sponsorship.html">Sponsor</a>
+        <a class="btn" href="prints.html">Buy print</a>
+      </div>
+    </div>
+    <div class="adventure-line"></div>
   </section>
-
-  <div class="actions">
-    <a class="btn pink" href="sponsorship.html">Sponsor</a>
-    <a class="btn" href="prints.html">Buy print</a>
-  </div>
 </main>
 </body>
 </html>
