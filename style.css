@@ -344,11 +344,11 @@ a.tile { text-decoration: none; }
 
 }
 @media (max-width: 640px) {
-  .nav { padding: 10px 16px 8px; height: auto; flex-wrap: wrap; justify-content: center; gap: 4px 18px; }
+  .nav { padding: 10px 8px 8px; height: auto; flex-wrap: wrap; justify-content: center; gap: 4px 11px; }
   .nav .nav-logo { margin: 0; flex-basis: 100%; display: block; text-align: center; }
   .nav .nav-logo img { display: inline-block; }
   .nav .nav-logo img { height: 36px; }
-  .nav a { font-size: 11px; letter-spacing: 0.02em; }
+  .nav a { font-size: 10px; letter-spacing: 0; font-stretch: 100%; }
   .site-foot { padding: 36px 16px; }
   .site-foot img { height: 30px; }
   .section { padding: 80px 16px; }
