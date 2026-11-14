@@ -77,7 +77,7 @@ a { color: inherit; }
 }
 .nav a:hover, .nav a[aria-current="page"] { border-bottom-color: var(--white); }
 .nav .nav-logo { margin-right: auto; border: 0; padding: 0; }
-.nav .nav-logo img { height: 34px; width: auto; }
+.nav .nav-logo img { height: 38px; width: auto; }
 
 /* Full-bleed photo heroes */
 .hero {
@@ -101,7 +101,7 @@ a { color: inherit; }
 .hero-inner { position: relative; padding: 0 24px 96px; max-width: 1100px; }
 .hero .display { font-size: clamp(34px, 5.6vw, 76px); }
 .hero .lede { max-width: 640px; margin: 22px auto 0; font-size: 17px; color: var(--pink-light); }
-.hero-logo { width: min(380px, 70vw); margin: 0 auto 40px; }
+.hero-logo { width: min(560px, 82vw); height: auto; margin: 0 auto 36px; }
 
 /* Text-and-arrow links, Ferrari style */
 .go {
@@ -148,7 +148,8 @@ a { color: inherit; }
 }
 .story .display { font-size: clamp(30px, 3.4vw, 48px); margin-bottom: 28px; }
 .story p { margin: 0 0 18px; font-size: 17px; color: var(--pink-ink); }
-.story img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.story > img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.story-emblem { width: min(240px, 60%); height: auto; margin: 0 0 28px; }
 
 /* Banner */
 .banner {
@@ -319,6 +320,20 @@ a.tile { text-decoration: none; }
 }
 .send:hover { background: var(--grey-8); }
 
+/* Footer */
+.site-foot {
+  background: var(--white);
+  padding: 48px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid var(--grey-2);
+}
+.site-foot img { height: 40px; width: auto; }
+.site-foot p { margin: 0; font-size: 13px; color: var(--pink-ink); }
+
 @media (max-width: 900px) {
   .story, .ledger, .note, .contact, .chapter { grid-template-columns: 1fr; gap: 48px; }
   .chapter { gap: 0; }
@@ -333,7 +348,9 @@ a.tile { text-decoration: none; }
 @media (max-width: 640px) {
   .nav { padding: 0 16px; gap: 14px; height: 64px; }
   .nav a { font-size: 10px; letter-spacing: 0; }
-  .nav .nav-logo img { height: 22px; }
+  .nav .nav-logo img { height: 26px; }
+  .site-foot { padding: 36px 16px; }
+  .site-foot img { height: 30px; }
   .section { padding: 80px 16px; }
   .story { padding: 72px 16px; }
   .tiles { grid-template-columns: 1fr; }
