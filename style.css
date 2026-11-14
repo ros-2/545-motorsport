@@ -75,8 +75,8 @@ a { color: inherit; }
   transition: border-color 0.25s;
 }
 .nav a:hover, .nav a[aria-current="page"] { border-bottom-color: var(--logo-pink); }
-.nav .nav-logo { margin-right: auto; border: 0; padding: 0; }
-.nav .nav-logo img { height: 44px; width: auto; display: block; }
+.nav .nav-logo { margin-right: auto; border: 0; padding: 0; flex-shrink: 0; }
+.nav .nav-logo img { height: 44px; width: auto; max-width: none; display: block; }
 
 /* Full-bleed photo heroes */
 .hero {
@@ -100,6 +100,7 @@ a { color: inherit; }
 .hero-inner { position: relative; padding: 0 24px 96px; max-width: 1100px; }
 .hero .display { font-size: clamp(34px, 5.6vw, 76px); }
 .hero .lede { max-width: 640px; margin: 22px auto 0; font-size: 17px; color: rgba(255,255,255,0.85); }
+.hero-title { margin: 0; line-height: 0; }
 .hero-logo { width: min(560px, 82vw); height: auto; margin: 0 auto 36px; }
 
 /* Text-and-arrow links, Ferrari style */
@@ -343,9 +344,10 @@ a.tile { text-decoration: none; }
 
 }
 @media (max-width: 640px) {
-  .nav { padding: 0 16px; gap: 14px; height: 64px; }
-  .nav a { font-size: 10px; letter-spacing: 0; }
-  .nav .nav-logo img { height: 30px; }
+  .nav { padding: 10px 16px 8px; height: auto; flex-wrap: wrap; justify-content: center; gap: 4px 18px; }
+  .nav .nav-logo { margin: 0; flex-basis: 100%; display: flex; justify-content: center; }
+  .nav .nav-logo img { height: 36px; }
+  .nav a { font-size: 11px; letter-spacing: 0.02em; }
   .site-foot { padding: 36px 16px; }
   .site-foot img { height: 30px; }
   .section { padding: 80px 16px; }
