@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="545 Motorsport: an engineer-led endurance racing team with one goal, to win the 24 Hours of Le Mans by 2035.">
+  <title>Engineering | 545 Motorsport</title>
+  <link rel="icon" href="logo/favicon.png?v=2" type="image/png">
+  <link rel="apple-touch-icon" href="logo/apple-touch-icon.png?v=2">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=1794671868">
+</head>
+<body>
+<header class="top">
+  <nav class="nav">
+    <a href="index.html" class="nav-logo" aria-label="545 Motorsport home"><picture><source srcset="logo/545-navy.png" media="(prefers-reduced-motion: reduce)"><img src="logo/545-navy-loop.gif?v=5" alt="545" width="960" height="300"></picture></a>
+    <a href="journey.html">Racing</a>
+    <a href="prints.html">Prints</a>
+    <a href="engineering.html" aria-current="page">Engineering</a>
+    <a href="sponsorship.html">Sponsorship</a>
+  </nav>
+</header>
+<main>
+  <section class="hero short" style="background-image:url('img/cockpit.jpg')">
+    <div class="hero-inner">
+      <p class="kicker">Engineering</p>
+      <h1 class="display">Measured, tested, improved</h1>
+      <p class="lede">545 Motorsport is led by an engineer. Every decision about the car, the driver and the programme starts with evidence.</p>
+    </div>
+  </section>
+
+  <section class="story light">
+    <div>
+      <p class="kicker">Our approach</p>
+      <h2 class="display">Engineering before ego</h2>
+      <p>Endurance racing rewards the team that makes the fewest mistakes over the longest time. That makes it an engineering problem as much as a driving one.</p>
+      <p>We treat every session as a test: set a question, gather the data, change one thing, and measure again. What works is kept. What doesn't is learned from.</p>
+      <p>No shortcuts and no guesswork, just steady, documented progress towards Le Mans.</p>
+    </div>
+    <img src="img/pit-lane.jpg" alt="A racing car in the pit lane">
+  </section>
+
+  <section class="grey">
+    <div class="section ledger">
+      <div>
+        <h3 class="display">On the car</h3>
+        <ul>
+          <li>Setup built from data, not habit</li>
+          <li>Telemetry reviewed after every session</li>
+          <li>Reliability first: a car has to finish to win</li>
+          <li>Every change tested and recorded</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="display">In the programme</h3>
+        <ul>
+          <li>Clear targets for each season</li>
+          <li>Driver development measured lap by lap</li>
+          <li>Decisions written down and reviewed</li>
+          <li>Partners kept informed with real results</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="note">
+      <h3 class="display">Engineering partners</h3>
+      <p>Interested in working with us on the technical side, from parts and data to testing time? <a href="contact.html">Get in touch</a> or see our <a href="sponsorship.html">sponsorship packages</a>.</p>
+    </div>
+  </section>
+</main>
+<footer class="site-foot">
+  <a href="index.html" aria-label="545 Motorsport home"><img src="logo/545-motorsport-navy.png" alt="545 Motorsport"></a>
+  <p>&copy; 2026 545 Motorsport</p>
+</footer>
+<script>
+  (function () {
+    var top = document.querySelector(".top");
+    var solid = !document.querySelector(".hero");
+    function set() { top.classList.toggle("solid", solid || window.scrollY > 40); }
+    set(); window.addEventListener("scroll", set, { passive: true });
+  })();
+</script>
+</body>
+</html>
